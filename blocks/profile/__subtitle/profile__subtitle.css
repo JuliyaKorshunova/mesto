@@ -1,0 +1,19 @@
+.profile__subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #FFFFFF;
+
+  padding-top: 16px;
+  max-width: 236px;
+}
+
+@media screen and (max-width: 600px) {
+  .profile__title {
+    max-width: 182px;
+    font-size: 14px;
+    align-self: center;
+  } 
+}

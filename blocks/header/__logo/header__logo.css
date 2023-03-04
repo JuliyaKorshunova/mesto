@@ -1,0 +1,15 @@
+.header__logo {
+  display: flex;
+  align-self: flex-start;
+  width: 142px;
+  aspect-ratio: 4 / 1;
+  padding-bottom: 41px;
+}
+
+@media screen and (max-width: 600px) {
+  .header__logo {
+    width: 103px;
+    padding-left: 27px;
+    padding-bottom: 31px;
+  }
+}

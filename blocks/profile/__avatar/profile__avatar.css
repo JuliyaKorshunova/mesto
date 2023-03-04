@@ -1,0 +1,10 @@
+.profile__avatar {
+  max-width: 120px;
+  min-height: 120px;
+  margin: 0;
+  padding: 0;
+  
+  color: white;
+  border-radius: 50%;
+}
+

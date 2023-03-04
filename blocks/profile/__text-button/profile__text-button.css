@@ -1,0 +1,4 @@
+.profile__text-button {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,14 @@
+.profile__button-edit {
+  max-width: 24px;
+  max-height: 24px;
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  display: inline-block;
+  
+  background-color: transparent;
+  background-image: url(../../../images/pan.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opaciti .5 linear;
+  opacity: 1;
+}
