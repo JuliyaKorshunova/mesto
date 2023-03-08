@@ -11,32 +11,17 @@
 
 <body class="page">
 
-<div class="popup popup__form">
-  <div class="popup__box">
-    <button class="popup__close" type="button"></button>
-    <form class="button popup__form">
-      <input type="text" class="" id="name">
-      <input type="text" class="" id="name">
-      <submit ></submit>
-    </form>
-  </div>
-</div>
-
-
-
-
   <header class="header">
     <img class="header__logo" src="././images/header__logo.svg" alt="Места России">
   </header>
 
   <main class="main">
 
-
     <section class="profile">
       <div class="profile__info">
       <img class="profile__avatar" src="././images/kusto.jpg" alt="Жак-Ив Кусто">
 
-        <div class="profile__box">
+        <div class="profile__container">
 
           <div class="profile__text-button">  
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -47,11 +32,11 @@
         </div>
 
       </div>
-      <button class="profile__add-botton"></button>
+      <button class="button profile__add-button"></button>
     </section>
 
-
     <section class="element">
+
       <div class="element__item">
         <img src="././images/zamok-Karachaevsk.jpg" alt="Замок в Карачаевске">
           <div class="element__container">
@@ -101,7 +86,6 @@
       </div>
 
      </section>
-
     
   </main>
 
@@ -109,6 +93,18 @@
     <p class="footer__text">© 2023 Юлия Коршунова</p>
   </footer>
   
+  <div class="popup">
+    <div class="popup__container">
+      <button class="button popup__close" type="button"></button>
+      <form class="form">
+        <h2 class="form__subtitle">Редактировать профиль</h2>
+        <input type="text" class="form__input form__input-name" id="name" value="Имя">
+        <input type="text" class="form__input form__input-profession" id="profession" value="Профессия">
+        <input type="submit" class="form__button-save" value="Сохранить">
+      </form>
+    </div>
+  </div>
+
   <script src="./scripts/index.js"></script>
 </body>
 </html>

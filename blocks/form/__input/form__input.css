@@ -1,0 +1,29 @@
+.form__input {
+width: 358px;
+height: 27px;
+margin-bottom: 30px;
+display: flex;
+align-self: center;
+border: none;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+box-sizing: border-box;
+font-family: 'Inter' sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+color: #000000;
+}
+
+.form__text-input :last-of-type {
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 600px) {
+    .form__input  {
+      width: 238px;
+      height: 14px;
+      font-size: 14px;
+      line-height: 17px;
+    } 
+  }

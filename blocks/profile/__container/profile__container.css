@@ -1,4 +1,4 @@
-.profile__box {
+.profile__container {
   margin: 0;
   padding: 0;
   padding-left: 30px;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .profile__box {
+  .profile__container {
     flex-direction: column;
     text-align: center;
     padding-left: 0;

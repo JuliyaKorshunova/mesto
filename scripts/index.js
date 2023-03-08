@@ -1,11 +1,30 @@
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.menu__open-popup');
+const popupOpenBattonElement = document.querySelector('.profile__button-edit');
 
 const togglePopupVisibility = function () {
-  popupElement.classList.toggle('popup_is-opened');
+  popupElement.classList.toggle('popup_opened');
 };
 
-popupOpenButtonElement.addEventListener('click', function () {
-  popupElement.classList.toggle('popup_is-opened');
-});
+const popupOpenButtonElement.addEventListener('click', togglePopupVisibility);
+
+
+
+
+
+//togglePopupVisibility();
+
+
+/*const openPopup = function () {
+  popupElement.classList.add('popup_opened');
+  nameInput.value = nameText.textContent;
+  professionInput.value = profession.textContent;
+}
+
+const closePopup = function () {
+  popupElement.classList.remove('popup_opened');
+}
+
+popupOpenButtonElement.addEventListener('click', openPopup);
+popupCloseButtonElement.addEventListener('click', closePopup);
+*/

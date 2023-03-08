@@ -7,13 +7,17 @@
   color: #FFFFFF;
 
   padding-top: 16px;
+  margin: 0;
   max-width: 236px;
+  align-self: center;
 }
 
 @media screen and (max-width: 600px) {
-  .profile__title {
+  .profile__subtitle {
     max-width: 182px;
     font-size: 14px;
     align-self: center;
+    text-align: center;
+    padding-bottom: 36px;
   } 
 }
