@@ -7,7 +7,7 @@
   display: flex;
   align-self: center;
   justify-content: space-around;
-  
+    
   font-family: 'Inter' sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -17,12 +17,12 @@
   color: #FFFFFF;
 }
 
-.form__button:hover {
+.form__button-save:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 600px) {
-  .form__button {
+  .form__button-save {
     margin-bottom: 25px;
     width: 238px;
     height: 46px;

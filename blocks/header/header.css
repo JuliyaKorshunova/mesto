@@ -9,7 +9,6 @@
   border-bottom: 1px solid #545454;
 }
 
-
 @media screen and (max-width: 600px) {
   .element {
     grid-template-columns: repeat(1, 1fr);
@@ -23,13 +22,5 @@
     width: 320px;
     padding-top: 28px;
     padding-bottom: 28px;
-  } 
-}
-
-/*@media screen and (max-width: 1000px) {
-  .element {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 581px;
-
   } 
 }

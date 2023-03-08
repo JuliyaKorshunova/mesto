@@ -1,10 +1,10 @@
-.popup__subtitle {
+.form__subtitle {
   width: 330px;
   height: 23px;
-  margin-top: 34px;
-  margin-left: 36px;
-  margin-right: 64px;
-  margin-bottom: 54px;
+  padding-top: 34px;
+  padding-left: 36px;
+  padding-right: 64px;
+  padding-bottom: 54px;
 
   font-family: 'Inter' sans-serif;
   font-style: normal;
@@ -15,11 +15,13 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__subtitle {
-    margin: auto;
-    width: 238px;
-    height: 22px;
+  .form__subtitle {
     font-size: 18px;
     line-height: 22px;
+    margin: 0 auto;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 75px;
+    text-align: center;
   } 
 }
