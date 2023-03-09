@@ -1,14 +1,22 @@
 .profile__button-edit {
-  min-width: 24px;
+  width: 24px;
   aspect-ratio: 1 / 1;
-  width: 100%;
   background-image: url(../../../images/edit-button.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
   align-self: center;
-
-  display: inline-block;
-  transition: opaciti 0.5 linear;
+  border: 1px solid #FFFFFF;
   opacity: 1;
+}
+
+.header__lang-link:hover {
+  cursor: url(../../../images/cursor.png), pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .profile__button-edit {
+    width: 18px;
+    transform: translate(0px, 13px);
+  }
 }

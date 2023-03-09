@@ -1,14 +1,18 @@
 .form__button-save {
   width: 358px;
   height: 50px;
+  margin: 0;
+  padding: 0;
   margin-bottom: 37px;
   background: #000000;
   border-radius: 2px;
   display: flex;
   align-self: center;
   justify-content: space-around;
-    
-  font-family: 'Inter' sans-serif;
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -19,6 +23,7 @@
 
 .form__button-save:hover {
   opacity: 0.8;
+  cursor: url(../../../images/cursor.svg), pointer;
 }
 
 @media screen and (max-width: 600px) {
@@ -27,5 +32,5 @@
     width: 238px;
     height: 46px;
     line-height: 22px;
-  } 
+  }
 }

@@ -7,15 +7,24 @@
   display: inline-block;
   background-color: transparent;
   
-  background-image: url(../../../images/plus.png);
+  background-image: url(../../../images/plus.svg);
   background-repeat: no-repeat;
   background-position: center;
-  transition: opaciti .5 linear;
+  background-size: 22px 22px;
   opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
   .profile__add-button {
     width: 100%;
+    background-size: 16px 16px;
   } 
+}
+
+@media screen and (max-width: 370px) {
+  .profile__add-button {
+    width: 282px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
 }

@@ -11,6 +11,6 @@
   .profile__container {
     flex-direction: column;
     text-align: center;
-    padding-left: 0;
+    padding-left: 19px;
   } 
 }

@@ -1,12 +1,10 @@
 .form__subtitle {
-  width: 330px;
-  height: 23px;
   padding-top: 34px;
   padding-left: 36px;
   padding-right: 64px;
   padding-bottom: 54px;
-
-  font-family: 'Inter' sans-serif;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -18,10 +16,8 @@
   .form__subtitle {
     font-size: 18px;
     line-height: 22px;
-    margin: 0 auto;
     padding-left: 22px;
     padding-right: 22px;
-    padding-bottom: 75px;
     text-align: center;
   } 
 }

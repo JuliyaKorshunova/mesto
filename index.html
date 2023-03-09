@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
+  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Юлия Коршунова">
-  <link rel="stylesheet" href="./pages/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Юлия Коршунова">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Место</title>
+  </head>
 
-  <title>Место</title>
-</head>
+  <body class="page">
 
-<body class="page">
+    <header class="header">
+      <img class="header__logo" src="././images/header__logo.svg" alt="Места России">
+    </header>
 
-  <header class="header">
-    <img class="header__logo" src="././images/header__logo.svg" alt="Места России">
-  </header>
+    <main class="main">
 
-  <main class="main">
-
-    <section class="profile">
-      <div class="profile__info">
-      <img class="profile__avatar" src="././images/kusto.jpg" alt="Жак-Ив Кусто">
-        <div class="profile__container">
-          <div class="profile__text-button">  
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="button profile__button-edit"></button>
+      <section class="profile">
+        <div class="profile__info">
+          <img class="profile__avatar" src="././images/kusto.jpg" alt="Жак-Ив Кусто">
+          <div class="profile__container">
+            <div class="profile__text-button">  
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="button profile__button-edit" type="button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <p class="profile__subtitle">Исследователь океана</p>
         </div>
-      </div>
-      <button class="button profile__add-button"></button>
-    </section>
+        <button class="button profile__add-button" type="button"></button>
+      </section>
 
-    <section class="element">
-      <div class="element__item">
-        <img src="././images/zamok-Karachaevsk.jpg" alt="Замок в Карачаевске">
+      <section class="element">
+        <div class="element__item">
+          <img src="././images/zamok-Karachaevsk.jpg" alt="Замок в Карачаевске">
           <div class="element__container">
             <h2 class="element__subtitle">Карачаевск</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
+        </div>
 
-      <div class="element__item">
-        <img src="././images/elbrus.jpg" alt="Замок в Карачаевске">
-        <div class="element__container">
+        <div class="element__item">
+          <img src="././images/elbrus.jpg" alt="Замок в Карачаевске">
+          <div class="element__container">
             <h2 class="element__subtitle">Гора Эльбрус</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
+        </div>
 
-      <div class="element__item">
-        <img src="././images/dombay.jpg" alt="Замок в Карачаевске">
-        <div class="element__container">
+        <div class="element__item">
+          <img src="././images/dombay.jpg" alt="Замок в Карачаевске">
+          <div class="element__container">
             <h2 class="element__subtitle">Домбай</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
+        </div>
 
-      <div class="element__item">
-        <img src="././images/elbrus.jpg" alt="Замок в Карачаевске">
-        <div class="element__container">
+        <div class="element__item">
+          <img src="././images/elbrus.jpg" alt="Замок в Карачаевске">
+          <div class="element__container">
             <h2 class="element__subtitle">Гора Эльбрус</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
+        </div>
 
-      <div class="element__item">
-        <img src="././images/dombay.jpg" alt="Замок в Карачаевске">
-        <div class="element__container">
+        <div class="element__item">
+          <img src="././images/dombay.jpg" alt="Замок в Карачаевске">
+          <div class="element__container">
             <h2 class="element__subtitle">Домбай</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
+        </div>
 
-      <div class="element__item">
-        <img src="././images/zamok-Karachaevsk.jpg" alt="Замок в Карачаево-Черкессии">
-        <div class="element__container">
+        <div class="element__item">
+          <img src="././images/zamok-Karachaevsk.jpg" alt="Замок в Карачаево-Черкессии">
+          <div class="element__container">
             <h2 class="element__subtitle">Карачаево-Черкессия</h2>
             <button class="button element__like" type="button"></button>
           </div>
-      </div>
-     </section>
+        </div>
+      </section>
+      
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">© 2023 Юлия Коршунова</p>
+    </footer>
     
-  </main>
-
-  <footer class="footer">
-    <p class="footer__text">© 2023 Юлия Коршунова</p>
-  </footer>
-  
-  <div class="popup">
-    <div class="popup__container">
-      <button class="button popup__close" type="button"></button>
-      <form class="form">
-        <h2 class="form__subtitle">Редактировать профиль</h2>
-        <input type="text" class="form__input form__input-name" id="name" value="name">
-        <input type="text" class="form__input form__input-profession" id="profession" value="profession">
-        <input type="submit" class="form__button-save" value="Сохранить">
-      </form>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="button popup__close" type="button"></button>
+        <form class="form" name="accio-name">
+          <h3 class="form__subtitle">Редактировать профиль</h3>
+          <input type="text" class="form__input-name" name="name" id="name" value="name">
+          <input type="text" class="form__input-profession" name="profession" id="profession" value="profession">
+          <button type="submit" class="form__button-save" name="button" value="Сохранить">Сохранить</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js"></script>
 
-</body>
+  </body>
 </html>

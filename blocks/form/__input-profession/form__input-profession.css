@@ -1,0 +1,30 @@
+.form__input-profession {
+  width: 358px;
+  height: 27px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  align-self: center;
+  border: none;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .form__input-profession {
+    width: 238px;
+  } 
+}
+.form__input-profession:last-of-type {
+  margin-bottom: 45px;
+}

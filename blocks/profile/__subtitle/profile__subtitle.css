@@ -1,5 +1,5 @@
 .profile__subtitle {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-size: 18px;
   font-weight: 400;
@@ -8,16 +8,20 @@
 
   padding-top: 16px;
   margin: 0;
-  max-width: 236px;
-  align-self: center;
+  max-width: 336px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
   .profile__subtitle {
-    max-width: 182px;
+    max-width: 282px;
     font-size: 14px;
+    line-height: 17px;
     align-self: center;
     text-align: center;
+    padding-top: 14px;
     padding-bottom: 36px;
   } 
 }

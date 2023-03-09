@@ -1,7 +1,8 @@
 .element__like {
   min-width: 22px;
   height: 19px;
-  background-image: url(../../../images/vector.png);
+  background-image: url(../../../images/like.svg);
+  background-color: transparent;
   background-repeat: no-repeat;
   border: none;
 }

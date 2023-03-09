@@ -8,14 +8,19 @@
   color: #FFFFFF;
 
   padding-right: 18px;
-  min-width: 294px;
+  width: 294px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
   .profile__title {
     max-width: 189px;
     font-size: 27px;
+    line-height: 33px;
     align-self: center;
     text-align: center;
+    padding-top: 22px;
   } 
 }

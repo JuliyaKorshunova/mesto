@@ -14,7 +14,6 @@
   .element {
     grid-template-columns: repeat(2, 1fr);
     max-width: 581px;
-
   } 
 }
 
@@ -22,6 +21,6 @@
   .element {
     grid-template-columns: repeat(1, 1fr);
     max-width: 282px;
-    
+    padding-top: 36px;
   } 
 }
