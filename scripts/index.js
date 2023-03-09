@@ -5,8 +5,8 @@ const popupOpenButtonElement = document.querySelector('.profile__button-edit');
 const profileName = document.querySelector('.profile__title');
 const profileProfession = document.querySelector('.profile__subtitle');
 
-const formInputName = document.querySelector('.form__input-name');
-const formInputProfession = document.querySelector('.form__input-profession');
+const formInputName = document.querySelector('#name');
+const formInputProfession = document.querySelector('#profession');
 const formInput = document.querySelector('.form');
 
 
