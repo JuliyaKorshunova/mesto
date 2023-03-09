@@ -3,7 +3,6 @@
   height: 27px;
   margin: 0;
   padding: 0;
-  margin-bottom: 48px;
   display: flex;
   align-self: center;
   border: none;
@@ -26,8 +25,8 @@
   @media screen and (max-width: 600px) {
     .form__input {
       width: 238px;
-    } 
-  }
+    }
   .form__input:last-of-type {
     margin-bottom: 45px;
   }
+}
