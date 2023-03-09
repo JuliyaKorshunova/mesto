@@ -18,9 +18,7 @@
   line-height: 17px;
   color: #000000;
 }
-.form__input-name :last-of-type {
-  margin-bottom: 48px;
-}
+
 
 @media screen and (max-width: 600px) {
   .form__input-name {

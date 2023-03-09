@@ -15,13 +15,13 @@
 
 @media screen and (max-width: 700px) {
   .footer {
-    width: 80%;    
+    width: 80%;
+    margin-left: 19px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .footer {
-    width: 282px;
     padding-top: 48px;
     padding-bottom: 36px;
   }

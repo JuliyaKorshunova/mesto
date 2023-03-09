@@ -5,21 +5,18 @@
   width: 880px;
   display: flex;
   align-self: center;
-  border-bottom: 1px solid #545454;
-  opacity: 0.7;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 @media screen and (max-width: 1000px) {
   .header {
     width: 65%;
-    padding-left: 27px;
   } 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .header {
     width: 320px;
     padding-top: 28px;
-    padding-bottom: 34px;
   } 
 }

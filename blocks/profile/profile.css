@@ -11,14 +11,11 @@
 @media screen and (max-width: 900px) {
   .profile {
     flex-direction: column;
-    align-items: center;
   } 
 }
 
 @media screen and (max-width: 500px) {
   .profile {
-    flex-direction: column;
-    align-items: center;
     margin-top: 38px;
   } 
 }

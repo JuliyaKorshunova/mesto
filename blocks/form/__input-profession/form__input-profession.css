@@ -3,7 +3,7 @@
   height: 27px;
   margin: 0;
   padding: 0;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
   display: flex;
   align-self: center;
   border: none;
@@ -17,6 +17,10 @@
   font-size: 14px;
   line-height: 17px;
   color: #000000;
+}
+
+.form__input-profession:last-of-type {
+  margin-bottom: 48px;
 }
 
 @media screen and (max-width: 600px) {

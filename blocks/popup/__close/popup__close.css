@@ -11,9 +11,8 @@
   background-repeat: no-repeat;
 }
 
-popup__close:hover  {
+.popup__close:hover  {
   opacity: 0.8;
-  cursor: url(../../../images/cursor.svg), pointer;
 }
 
 @media screen and (max-width: 600px) {

@@ -10,8 +10,8 @@
   opacity: 1;
 }
 
-.header__lang-link:hover {
-  cursor: url(../../../images/cursor.png), pointer;
+.profile__button-edit:hover {
+  cursor: url(../../../images/cursor.svg), pointer;
 }
 
 @media screen and (max-width: 400px) {

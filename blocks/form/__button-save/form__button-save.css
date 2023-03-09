@@ -6,6 +6,7 @@
   margin-bottom: 37px;
   background: #000000;
   border-radius: 2px;
+  border-color: #000000;
   display: flex;
   align-self: center;
   justify-content: space-around;
@@ -23,7 +24,7 @@
 
 .form__button-save:hover {
   opacity: 0.8;
-  cursor: url(../../../images/cursor.svg), pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
@@ -31,6 +32,7 @@
     margin-bottom: 25px;
     width: 238px;
     height: 46px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
