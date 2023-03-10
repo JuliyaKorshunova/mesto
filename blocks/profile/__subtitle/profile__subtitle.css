@@ -6,9 +6,9 @@
   line-height: 22px;
   color: #FFFFFF;
 
-  padding-top: 16px;
   margin: 0;
   max-width: 336px;
+
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -21,7 +21,5 @@
     line-height: 17px;
     align-self: center;
     text-align: center;
-    padding-top: 14px;
-    padding-bottom: 36px;
   } 
 }

@@ -1,16 +1,12 @@
 .profile__container {
-  margin: 0;
-  padding: 0;
-  padding-left: 30px;
   display: flex;
   flex-direction: column;
-  align-self: center;
+
 }
 
 @media screen and (max-width: 600px) {
   .profile__container {
-    flex-direction: column;
     text-align: center;
-    padding-left: 19px;
+    padding-top: 26px;
   } 
 }

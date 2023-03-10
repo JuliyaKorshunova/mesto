@@ -1,4 +1,18 @@
 .profile__text-button {
-  display: flex;
-  flex-direction: row;
+  display: inline-grid;
+  grid-template-areas:
+    "name neme"
+    "job .";
+    column-gap: 18px;
+    row-gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .profile__text-button {
+    display: inline-grid;
+    grid-template-areas:
+    "name neme"
+    "job .";
+    row-gap: 14px;
+  }
 }
