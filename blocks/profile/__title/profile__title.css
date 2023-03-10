@@ -10,6 +10,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transform: translate(0.5px, 6px);
 }
 
 @media screen and (max-width: 1279px) {
@@ -23,8 +24,8 @@
     max-width: 189px;
     font-size: 27px;
     line-height: 33px;
-    
+    transform: translate(-2px, 4px);
     align-self: center;
     text-align: center;
-  } 
+  }
 }

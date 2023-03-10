@@ -10,4 +10,5 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transform: translate(3px, 0px);
 }

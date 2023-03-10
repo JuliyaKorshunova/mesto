@@ -8,5 +8,6 @@
 @media screen and (max-width: 600px) {
   .profile__avatar {
     align-self: center;
+    transform: translate(1px, 4px);
   } 
 }

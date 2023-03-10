@@ -7,6 +7,6 @@
   .profile__info {
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 36px;
+    padding-bottom: 30px;
   } 
 }

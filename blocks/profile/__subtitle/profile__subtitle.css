@@ -7,8 +7,10 @@
   color: #FFFFFF;
 
   margin: 0;
+  justify-items: start;
+  align-content: center;
   max-width: 336px;
-
+  transform: translate(1.5px, -3px);
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -21,5 +23,6 @@
     line-height: 17px;
     align-self: center;
     text-align: center;
+    transform: translate(-1px, -3px);
   } 
 }
