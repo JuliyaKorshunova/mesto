@@ -39,8 +39,8 @@
 @import url(../blocks/popup/__figure-image/popup__figure-image.css);
 @import url(../blocks/popup/__figure-signature/popup__figure-signature.css);
 @import url(../blocks/popup/__figure/popup__figure.css);
-@import url(../blocks/popup/__input/form__input.css);
 @import url(../blocks/popup/__subtitle/popup__subtitle.css);
 @import url(../blocks/popup/_open-figure/popup_open-figure.css);
 @import url(../blocks/popup/form/form.css);
+@import url(../blocks/popup/__input/form__input.css);
 @import url(../blocks/popup/__button-save/form__button-save.css);

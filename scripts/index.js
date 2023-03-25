@@ -1,6 +1,4 @@
 //попап для ввода имени
-//const popupElement = document.querySelector('.popup');
-  
 const profileName = document.querySelector('.profile__title');
 const profileProfession = document.querySelector('.profile__subtitle');
 const popupOpenButtonProfile = document.querySelector('.profile__button-edit');
@@ -11,12 +9,12 @@ const formInputName = document.querySelector('.form__input_name');
 const formInputProfession = document.querySelector('.form__input_profession');
 const formInput = document.querySelector('.form');
 
-  function handleFormSubmit(evt) {
-    evt.preventDefault();
-    profileName.textContent = formInputName.value;
-    profileProfession.textContent = formInputProfession.value;
-    closePopup(popupOpenEdit);
-  }
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = formInputName.value;
+  profileProfession.textContent = formInputProfession.value;
+  closePopup(popupOpenEdit);
+}
 
 function openPopup() {
   openPopupWindow(popupOpenEdit);
@@ -26,6 +24,13 @@ function openPopup() {
   formInputProfession.value = professionText.trim();
 }
 
+function openPopupWindow(popupElement)  {
+  popupElement.classList.add('popup_opened');
+}    
+
+function closePopup(popupElement) {
+  popupElement.classList.remove('popup_opened')  
+}
 
 //увеличим фото
 const figurePopup = document.querySelector('.popup_open-figure')
@@ -40,21 +45,13 @@ function openFigurePopup(name, link) {
   popupFigureSignature.textContent = name
 }
 
-function openPopupWindow(popupElement)  {
-  popupElement.classList.add('popup_opened');
-}    
-
-function closePopup(popupElement) {
-  popupElement.classList.remove('popup_opened')  
-}
-
-
 //Добавим попап с фото и ссылкой
 const formPlaceName = document.querySelector('.form__input_place-name')
 const formPlaceLink = document.querySelector('.form__input_place-link')
+
 const popupAddCard = document.querySelector('.popup_add-card')
 const closeAddPopup = popupAddCard.querySelector('.popup__close')
-const formAddPhoto = document.querySelector('.form__new_add-photo')
+const formAddPhoto = document.querySelector('.form_add-photo')
 const elementTemplate = document.querySelector('#element-template').content;
 const buttonOpenAddCard = document.querySelector('.profile__add-button')
 const gridCards = document.querySelector('.element');
@@ -96,18 +93,21 @@ function deleteOnClick (event) {
 function createCard(link, name) {
   const firstCard = elementTemplate.querySelector('.element__item').cloneNode(true);
   const cardImage = firstCard.querySelector('.element__grid-foto');
+  const deleteCardButton = firstCard.querySelector('.element__delete-button');
+  const elementLikeButton = firstCard.querySelector('.element__like-button');
+
   cardImage.src = link;
   cardImage.alt = name;
+
   firstCard.querySelector('.element__subtitle').textContent = name;
-  const deleteCardButton = firstCard.querySelector('.element__delete-button');
-  const likeButton = firstCard.querySelector('.element__like-button');
   cardImage.addEventListener('click',() => openFigurePopup(name, link)); 
-  likeButton.addEventListener('click',() => toggleLike(likeButton));
-  deleteCardButton.addEventListener('click', event => deleteOnClick(event));
+  elementLikeButton.addEventListener('click', () => elementLikeButton.classList.toggle('element__like-button_active'));
+  deleteCardButton.addEventListener('click', (evt) => evt.target.closest('.element__item').remove());
+  
   return firstCard;
 }
 
-initialCards.forEach(element => gridCards.prepend(createCard(element.link, element.name)));
+initialCards.forEach(element => gridCards.append(createCard(element.link, element.name)));
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
@@ -116,11 +116,10 @@ function handleAddCardFormSubmit(evt) {
 }
 
 function openAddPopup() {
-  formPlaceLink.value = ' ';
-  formPlaceName.value = ' ';
+  formPlaceLink.value = '';
+  formPlaceName.value = '';
   openPopupWindow(popupAddCard);
 }
-
 
 popupOpenButtonProfile.addEventListener('click', openPopup);
 buttonOpenAddCard.addEventListener('click', openAddPopup);
