@@ -2,3 +2,7 @@
   width: 282px;
   height: 282px;
 }
+
+.element__grid-foto:hover {
+  cursor: pointer;
+}

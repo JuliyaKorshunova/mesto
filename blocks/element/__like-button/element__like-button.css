@@ -1,4 +1,4 @@
-.element__like {
+.element__like-button {
   min-width: 22px;
   height: 19px;
   background-image: url(../../../images/like.svg);
@@ -7,6 +7,6 @@
   border: none;
 }
 
-.element__like:hover {
+.element__like-button:hover {
   opacity: 0.5;
 }

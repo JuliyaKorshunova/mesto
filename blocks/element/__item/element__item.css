@@ -1,9 +1,13 @@
 .element__item {
-  width: 282px;
+  max-width: 282px;
   border-radius: 10px;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  align-items: flex-end;
+  justify-self: center;
+  position: relative;
+  z-index: 0;
 }

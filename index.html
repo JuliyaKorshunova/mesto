@@ -21,81 +21,69 @@
         <div class="profile__info">
           <img class="profile__avatar" src="././images/kusto.jpg" alt="Жак-Ив Кусто">
           <div class="profile__container">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <h1 class="text profile__title">Жак-Ив Кусто</h1>
               <button class="button profile__button-edit" type="button"></button>
-              <p class="profile__subtitle">Исследователь океана</p>
+              <p class="text profile__subtitle">Исследователь океана</p>
           </div>
         </div>
         <button class="button profile__add-button" type="button"></button>
       </section>
 
+      <template id="element-template">
+        <div class="element__item">
+          <button class="button element__delete-button" type="button"></button>
+          <img class="element__grid-foto" src="#" alt="#">
+          <div class="element__container">
+            <h2 class="text element__subtitle"></h2>
+            <button class="button element__like-button" type="button"></button>          
+          </div>
+        </div>
+      </template>
+      
       <section class="element">
-        <div class="element__item">
-          <img src="././images/zamok-Karachaevsk.jpg" class="element__grid-foto" alt="Замок в Карачаевске">
-          <div class="element__container">
-            <h2 class="element__subtitle">Карачаевск</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
-
-        <div class="element__item">
-          <img src="././images/elbrus.jpg" class="element__grid-foto" alt="Замок в Карачаевске">
-          <div class="element__container">
-            <h2 class="element__subtitle">Гора Эльбрус</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
-
-        <div class="element__item">
-          <img src="././images/dombay.jpg" class="element__grid-foto" alt="Замок в Карачаевске">
-          <div class="element__container">
-            <h2 class="element__subtitle">Домбай</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
-
-        <div class="element__item">
-          <img src="././images/elbrus.jpg" class="element__grid-foto" alt="Замок в Карачаевске">
-          <div class="element__container">
-            <h2 class="element__subtitle">Гора Эльбрус</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
-
-        <div class="element__item">
-          <img src="././images/dombay.jpg" class="element__grid-foto" alt="Замок в Карачаевске">
-          <div class="element__container">
-            <h2 class="element__subtitle">Домбай</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
-
-        <div class="element__item">
-          <img src="././images/zamok-Karachaevsk.jpg" class="element__grid-foto" alt="Замок в Карачаево-Черкессии">
-          <div class="element__container">
-            <h2 class="element__subtitle">Карачаево-Черкессия</h2>
-            <button class="button element__like" type="button"></button>
-          </div>
-        </div>
+        
       </section>
       
     </main>
 
     <footer class="footer">
-      <p class="footer__text">© 2023 Юлия Коршунова</p>
+      <p class="text footer__text">© 2023 Юлия Коршунова</p>
     </footer>
     
-    <div class="popup">
+    <div class="popup popup_edit-profile">
       <div class="popup__container">
         <button class="button popup__close" type="button"></button>
         <form class="form" name="accio-name">
-          <h3 class="popup__subtitle">Редактировать профиль</h3>
-          <input type="text" class="form__input" name="name" id="name" value="name">
-          <input type="text" class="form__input" name="profession" id="profession" value="profession">
-          <button type="submit" class="form__button-save" name="button" value="Сохранить">Сохранить</button>
+          <h3 class="popup__subtitle text">Редактировать профиль</h3>
+          <input type="text" class="form__input form__input_name" name="name" id="name" value="name">
+          <input type="text" class="form__input form__input_profession" name="profession" id="profession" value="profession">
+          <button type="submit" class="form__button-save" name="button">Сохранить</button>
         </form>
       </div>
     </div>
+
+    <div class="popup popup_add-card">
+      <div class="popup__container">
+        <button class="button popup__close" type="button"></button>
+        <form class="form form__new_add-photo" name="add-card" action="#">
+
+          <h3 class="popup__subtitle text">Новое место</h3>
+
+          <input required type="text" class="form__input form__input_place-name" name="place-name" id="place-name" placeholder="Название">
+          <input required type="text" class="form__input form__input_place-link" name="link" id="link" placeholder="Ссылка на картинку">
+          <button type="submit" class="form__button-save" name="button">Добавить</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="popup popup_open-figure">
+      <figure class="popup__figure">
+        <button class="button popup__close" type="button"></button>
+        <img class="popup__figure-image" src="#" alt="#">
+        <figcaption class="text popup__figure-signature"></figcaption> 
+      </figure>
+    </div>
+
 
     <script src="./scripts/index.js"></script>
 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Место</title>
+</head>
+
+
+<body class="page">
+
+  <div class="popup popup_purpouse_edit-profile">
+    <div class="popup__container">
+      <button class="button popup__close-button" type="button"></button>
+      <form action="#" class="popup__form popup__form_purpouse_edit-profile" name="edit-user-info">
+        <h2 class="text popup__form-title">Редактировать профиль</h2>
+        <input type="text" name="name" class="popup__form-text-input popup__form-text-input_purpouse_profile-name" id="name">
+        <input type="text" name="description" class="popup__form-text-input popup__form-text-input_purpouse_profile-description"
+          id="description">
+        <input type="submit" class="popup__form-save-button" value="Сохранить">
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_purpouse_add-card">
+    <div class="popup__container">
+      <button class="button popup__close-button" type="button"></button>
+      <form action="#" class="popup__form popup__form_purpouse_add-card" name="add-card">
+        <h2 class="text popup__form-title">Новое место</h2>
+        <input required type="text" name="place-name" class="popup__form-text-input popup__form-text-input_purpouse_place-name"
+        id="place-name" placeholder="Название">
+        <input required type="text" name="link" class="popup__form-text-input popup__form-text-input_purpouse_place-link" id="link"
+          placeholder="Ссылка на картинку">
+        <input type="submit" class="popup__form-save-button" value="Добавить">
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_purpouse_figure">
+    <figure class="popup__figure-popup">
+      <button class="button popup__close-button " type="button"></button>
+      <img class="popup__figure-popup-image" src="#" alt="#">
+      <figcaption class="text popup__figure-popup-caption"></figcaption>
+    </figure>
+  </div>
+
+  <header class="header">
+    <img src="./images/mesto-logo.svg" class="header__logo" alt="Лого проекта место">
+  </header>
+
+  <main class="main">
+
+    <section class="profile">
+      <div class="profile__container">
+        <img class="profile__avatar" src="./images/ivcusto.jpg" alt="Рожа Кусто">
+        <div class="profile__info-container">
+          <div class="profile__name-container">
+            <h1 class="profile__name text">
+              Жак-Ив Кусто
+            </h1>
+            <button class="button profile__edit-button" type="button"></button>
+          </div>
+          <p class="profile__description text">
+            Исследователь океана
+          </p>
+        </div>
+      </div>
+      <button class="button profile__add-button" type="button"></button>
+    </section>
+
+    <template id="card-template">
+      <div class="grid-cards__item">
+        <button class="button grid-cards__delete-btn" type="button"></button>
+        <img class="grid-cards__item-image" src="#" alt="#">
+        <div class="grid-cards__caption-container">
+          <h2 class="text grid-cards__caption"></h2>
+          <button class="button grid-cards__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
+
+    <section class="grid-cards">
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright text">&copy; 2023 Матвей Семенович Климовский</p>
+  </footer>
+  
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
+
+place-name
