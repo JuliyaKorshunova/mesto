@@ -4,7 +4,7 @@ const profileProfession = document.querySelector('.profile__subtitle');
 const popupOpenButtonProfile = document.querySelector('.profile__button-edit');
 
 const popupOpenEdit = document.querySelector('.popup_edit-profile');
-const popupCloseButton = popupOpenEdit.querySelector('.popup__close');
+
 const formInputName = document.querySelector('.form__input_name');
 const formInputProfession = document.querySelector('.form__input_profession');
 const formInput = document.querySelector('.form');
@@ -32,9 +32,17 @@ function closePopup(popupElement) {
   popupElement.classList.remove('popup_opened')  
 }
 
+//Универсальный обработчик крестиков закрытия
+const closeButtons = document.querySelectorAll('.popup__close');
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+
 //увеличим фото
 const figurePopup = document.querySelector('.popup_open-figure')
-const closeFigurePopup = figurePopup.querySelector('.popup__close')
+
 const popupFigureImage = figurePopup.querySelector('.popup__figure-image')
 const popupFigureSignature = figurePopup.querySelector('.popup__figure-signature')
 
@@ -50,7 +58,7 @@ const formPlaceName = document.querySelector('.form__input_place-name')
 const formPlaceLink = document.querySelector('.form__input_place-link')
 
 const popupAddCard = document.querySelector('.popup_add-card')
-const closeAddPopup = popupAddCard.querySelector('.popup__close')
+
 const formAddPhoto = document.querySelector('.form_add-photo')
 const elementTemplate = document.querySelector('#element-template').content;
 const buttonOpenAddCard = document.querySelector('.profile__add-button')
@@ -87,7 +95,7 @@ function toggleLike (object) {
 }
 
 function deleteOnClick (event) {
-  event.target.parentNode.remove()
+  event.target.closest.remove()
 }
 
 function createCard(link, name) {
@@ -113,20 +121,15 @@ function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   gridCards.prepend(createCard(formPlaceLink.value, formPlaceName.value));
   closePopup(popupAddCard);
+  evt.target.reset();
 }
 
 function openAddPopup() {
-  formPlaceLink.value = '';
-  formPlaceName.value = '';
   openPopupWindow(popupAddCard);
 }
 
 popupOpenButtonProfile.addEventListener('click', openPopup);
 buttonOpenAddCard.addEventListener('click', openAddPopup);
-
-popupCloseButton.addEventListener('click', () => closePopup(popupOpenEdit));
-closeAddPopup.addEventListener('click', () => closePopup(popupAddCard));
-closeFigurePopup.addEventListener('click', () => closePopup(figurePopup));
 
 formInput.addEventListener('submit', handleFormSubmit)
 formAddPhoto.addEventListener('submit', handleAddCardFormSubmit)
