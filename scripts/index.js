@@ -11,7 +11,7 @@ const formAccioNameElement = document.forms.accioName
 const formInputName = document.querySelector('.form__input_name');
 //профессия
 const formInputProfession = document.querySelector('.form__input_profession');
-const formInput = document.querySelector('.form');
+const formInput = document.querySelector('[name="accioName"]');
 const formAddCardElement = document.forms.addCard
 //название
 const popupInputPlaceNameElement = formAddCardElement.querySelector('.form__input_place-name');
@@ -145,9 +145,9 @@ function openAddPopup() {
 
 }
 //3 кнопки закрытия ппапов по Оверлей
-popupOpenEdit.addEventListener('click', (evt) => closePopupClickOverlay(evt))
-popupAddCard.addEventListener('click', (evt) => closePopupClickOverlay(evt))
-figurePopup.addEventListener('click', (evt) => closePopupClickOverlay(evt))
+popupOpenEdit.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
+popupAddCard.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
+figurePopup.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
 //Клик открытия попап добавления контенкта
 buttonOpenAddCard.addEventListener('click', openAddPopup);
 //Клик открытия попап редактирования профиля
