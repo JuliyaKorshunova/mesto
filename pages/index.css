@@ -42,5 +42,11 @@
 @import url(../blocks/popup/__subtitle/popup__subtitle.css);
 @import url(../blocks/popup/_open-figure/popup_open-figure.css);
 @import url(../blocks/popup/form/form.css);
+@import url(../blocks/popup/__text-container/popup__text-container.css);
 @import url(../blocks/popup/__input/form__input.css);
-@import url(../blocks/popup/__button-save/form__button-save.css);
+@import url(../blocks/popup/__input/_invalid/form__input_invalid.css);
+@import url(../blocks/popup/__submit/popup__submit.css);
+@import url(../blocks/popup/__submit/_disable/popup__submit_disable.css);
+
+@import url(../blocks/popup/__error/popup__error.css);
+@import url(../blocks/popup/__error/_type/popup__error_type.css);

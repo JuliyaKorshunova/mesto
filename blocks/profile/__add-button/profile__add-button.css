@@ -11,19 +11,21 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 22px 22px;
-  opacity: 1;
+}
+
+.profile__add-button:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 600px) {
   .profile__add-button {
-    width: 100%;
+    width: 282px;
     background-size: 16px 16px;
   } 
 }
 
 @media screen and (max-width: 370px) {
   .profile__add-button {
-    width: 282px;
     padding-top: 36px;
     padding-bottom: 36px;
   }

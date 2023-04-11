@@ -4,7 +4,7 @@
   display: flex;
   align-self: center;
   border: none;
-  margin-bottom: 30px;
+ 
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -12,17 +12,13 @@
   line-height: 17px;
   background-color: transparent;
   }
-  
-  .form__input:last-of-type {
-    margin-bottom: 48px;
-  }
-  
+    
   @media screen and (max-width: 600px) {
     .form__input {
       width: 238px;
     }
-
-  .form__input:last-of-type {
-    margin-bottom: 45px;
   }
+
+.form__input:invalid {
+  margin-bottom: 5px;
 }
