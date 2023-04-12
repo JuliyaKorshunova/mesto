@@ -18,7 +18,3 @@
       width: 238px;
     }
   }
-
-.form__input:invalid {
-  margin-bottom: 5px;
-}
