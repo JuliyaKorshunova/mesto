@@ -1,3 +1,8 @@
+import initialCards from "./url-list.js";
+import Card from './card.js';
+
+
+
 //попап для ввода имени
 //имя
 const profileName = document.querySelector('.profile__title');
@@ -17,11 +22,13 @@ const formAddCardElement = document.forms.addCard
 const popupInputPlaceNameElement = formAddCardElement.querySelector('.form__input_place-name');
 //url
 const popupInputPlaceLinkElement = formAddCardElement.querySelector('.form__input_place-link');
-//сброс ошибок
-const buttonSubmitFormAccioNameElement = formAccioNameElement.querySelector('.popup__submit');
-const inputListFormAccioNameElement = formAccioNameElement.querySelectorAll('.form__input');
-const buttonSubmitFormAddCardElement = formAddCardElement.querySelector('.popup__submit');
-const inputListFormAddCardElement = formAddCardElement.querySelectorAll('.form__input');
+
+const listsElement = document.querySelector('.element');
+//
+const selectorTemplate = '#element-template';
+
+
+
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -35,8 +42,7 @@ function openPopup() {
   openPopupWindow(popupOpenEdit);
   const nameText = profileName.textContent;
   const professionText = profileProfession.textContent;
-  //formAccioNameElement.reset();
-  resetErrorOpenForm(formAccioNameElement);
+  // resetErrorOpenForm(formAccioNameElement);
   formInputName.value = profileName.textContent;
   formInputProfession.value = profileProfession.textContent;
   toggleButton(inputListFormAccioNameElement, buttonSubmitFormAccioNameElement, validationConfig.disableButtonClass);
@@ -45,7 +51,7 @@ function openPopup() {
 //Универсальный обработчик крестиков закрытия
 const closeButtons = document.querySelectorAll('.popup__close');
 closeButtons.forEach((button) => {
-  const popup = button.closest('.popup');
+  const popup  =button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
 
@@ -77,10 +83,12 @@ function closePopupByEscape(evt) {
 //Открытие попап для фото
 function openFigurePopup(name, link) {
   openPopupWindow(figurePopup);
-  popupFigureImage.src = link
-  popupFigureImage.alt = name
+  popupFigureImage.src = link;
+  popupFigureImage.alt = name;
   popupFigureSignature.textContent = name
 }
+
+
 
 //Функция отмены нажатия попап при нажатии не на оверлей
 function closePopupClickOverlay(evt) {
@@ -88,48 +96,39 @@ function closePopupClickOverlay(evt) {
     closePopup(evt.currentTarget);
   }
 };
-
 //Добавим попап с полями название и ссылка
 const formPlaceName = document.querySelector('.form__input_place-name')
 const formPlaceLink = document.querySelector('.form__input_place-link')
 const popupAddCard = document.querySelector('.popup_add-card')
 const formAddPhoto = document.querySelector('.form_add-photo')
-const elementTemplate = document.querySelector('#element-template').content;
 //кнопка +
 const buttonOpenAddCard = document.querySelector('.profile__add-button')
 const gridCards = document.querySelector('.element');
-
 //Лайк
 function toggleLike (object) {
   object.classList.toggle('element__like-button_active')
 }
-
 //Удалить карточку
 function deleteOnClick (event) {
   event.target.closest.remove()
 }
 
+
 function createCard(link, name) {
-  const firstCard = elementTemplate.querySelector('.element__item').cloneNode(true);
-  const cardImage = firstCard.querySelector('.element__grid-foto');
-  const deleteCardButton = firstCard.querySelector('.element__delete-button');
-  const elementLikeButton = firstCard.querySelector('.element__like-button');
 
-cardImage.src = link;
-cardImage.alt = name;
-
-//Название
-firstCard.querySelector('.element__subtitle').textContent = name;
-//Клик открытия попап галереи мест
-cardImage.addEventListener('click',() => openFigurePopup(name, link)); 
-//Лайк
-elementLikeButton.addEventListener('click', () => elementLikeButton.classList.toggle('element__like-button_active'));
-//Удаление фото по клику
-deleteCardButton.addEventListener('click', (evt) => evt.target.closest('.element__item').remove());
-return firstCard;
+  return 
 }
 
-initialCards.forEach(element => gridCards.append(createCard(element.link, element.name)));
+//функция добавления карточки в нужный контейнер
+function addCard(container, card) {
+  container.prepend(card);
+}
+
+initialCards.forEach(element => {
+  const card = new Card(element, selectorTemplate, openFigurePopup);
+// console.log(card)
+  addCard(listsElement, card.createCard())
+});
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
@@ -140,9 +139,8 @@ function handleAddCardFormSubmit(evt) {
 function openAddPopup() {
   openPopupWindow(popupAddCard);
   formAddCardElement.reset();
-  resetErrorOpenForm(formAddCardElement);
+  // resetErrorOpenForm(formAddCardElement);
   toggleButton(inputListFormAddCardElement, buttonSubmitFormAddCardElement, validationConfig.disableButtonClass);
-
 }
 //3 кнопки закрытия ппапов по Оверлей
 popupOpenEdit.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
@@ -157,4 +155,4 @@ formInput.addEventListener('submit', handleFormSubmit)
 //Кнопка Добавить контент
 formAddPhoto.addEventListener('submit', handleAddCardFormSubmit)
 
-enableValidation(validationConfig) 
+// enableValidation(validationConfig)
