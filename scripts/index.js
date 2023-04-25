@@ -53,7 +53,7 @@ function openPopup() {
   openPopupWindow(popupOpenEdit);
   const nameText = profileName.textContent;
   const professionText = profileProfession.textContent;
-  formPersonalDataValidator.resetErrorOpenForm()
+  formPersonalDataValidator.resetValidation()
   formInputName.value = profileName.textContent;
   formInputProfession.value = profileProfession.textContent;
 }
@@ -157,7 +157,7 @@ formAddPhoto.addEventListener('submit', (evt) => {
 function openAddPopup() {
   openPopupWindow(popupAddCard);
   formAddCardElement.reset();
-  formAddCardValidator.resetErrorOpenForm()
+  formAddCardValidator.resetValidation()
 }
 
 //3 кнопки закрытия ппапов по Оверлей

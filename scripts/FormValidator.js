@@ -47,7 +47,7 @@ _hangEventListener() {
 enableValidation() {
   this._hangEventListener()
 }
-resetErrorOpenForm() {
+resetValidation() {
   this._inputList.forEach(input => {
     const errorTextElement = this._form.querySelector(`${this._errorSelectorTemplate}${input.name}`);
     if(!input.validity.valid) {
