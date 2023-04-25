@@ -1,6 +1,6 @@
 import initialCards from "./url-list.js";
-import Card from './card.js';
-
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
 
 
 //попап для ввода имени
@@ -22,13 +22,24 @@ const formAddCardElement = document.forms.addCard
 const popupInputPlaceNameElement = formAddCardElement.querySelector('.form__input_place-name');
 //url
 const popupInputPlaceLinkElement = formAddCardElement.querySelector('.form__input_place-link');
-
 const listsElement = document.querySelector('.element');
-//
 const selectorTemplate = '#element-template';
 
-
-
+//объект для валидации
+const validationConfig = {
+  //inputList
+    inputSelector: '.form__input',
+  //button
+    submitButtonSelector: '.popup__submit',
+  //span шаблон
+    errorSelectorTemplate: '.popup__error_type_',
+  //button disabled
+    disableButtonClass: 'popup__submit_disable',
+  //input
+    inputErrorClass: 'form__input_invalid',
+  //span
+    textErrorClass: 'popup__error_type'
+  };
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -42,10 +53,9 @@ function openPopup() {
   openPopupWindow(popupOpenEdit);
   const nameText = profileName.textContent;
   const professionText = profileProfession.textContent;
-  // resetErrorOpenForm(formAccioNameElement);
+  formPersonalDataValidator.resetErrorOpenForm()
   formInputName.value = profileName.textContent;
   formInputProfession.value = profileProfession.textContent;
-  toggleButton(inputListFormAccioNameElement, buttonSubmitFormAccioNameElement, validationConfig.disableButtonClass);
 }
 
 //Универсальный обработчик крестиков закрытия
@@ -88,8 +98,6 @@ function openFigurePopup(name, link) {
   popupFigureSignature.textContent = name
 }
 
-
-
 //Функция отмены нажатия попап при нажатии не на оверлей
 function closePopupClickOverlay(evt) {
   if (evt.target === evt.currentTarget) {
@@ -103,7 +111,7 @@ const popupAddCard = document.querySelector('.popup_add-card')
 const formAddPhoto = document.querySelector('.form_add-photo')
 //кнопка +
 const buttonOpenAddCard = document.querySelector('.profile__add-button')
-const gridCards = document.querySelector('.element');
+// const gridCards = document.querySelector('.element');
 //Лайк
 function toggleLike (object) {
   object.classList.toggle('element__like-button_active')
@@ -113,10 +121,19 @@ function deleteOnClick (event) {
   event.target.closest.remove()
 }
 
+//создаем экземпляр класса персональных данных
+const formPersonalDataValidator = new FormValidator(validationConfig, formAccioNameElement);
+formPersonalDataValidator.enableValidation()
 
-function createCard(link, name) {
+//создаем экземпляр класса добавления контента
+const formAddCardValidator = new FormValidator(validationConfig, formAddCardElement);
+formAddCardValidator.enableValidation()
 
-  return 
+//функция создания разметки карточки
+function createNewCard(element) {
+  const card = new Card(element, selectorTemplate, openFigurePopup);
+  const cardElement = card.createCard();
+  return cardElement
 }
 
 //функция добавления карточки в нужный контейнер
@@ -125,23 +142,24 @@ function addCard(container, card) {
 }
 
 initialCards.forEach(element => {
-  const card = new Card(element, selectorTemplate, openFigurePopup);
-// console.log(card)
-  addCard(listsElement, card.createCard())
+  addCard(listsElement, createNewCard(element))
 });
 
-function handleAddCardFormSubmit(evt) {
+//добавляет карточку с названием и ссылкой
+formAddPhoto.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  gridCards.prepend(createCard(formPlaceLink.value, formPlaceName.value));
+  const cardDatdNameLink = {name: popupInputPlaceNameElement.value, link: popupInputPlaceLinkElement.value};
+  addCard(listsElement, createNewCard(cardDatdNameLink));
   closePopup(popupAddCard);
-  evt.target.reset();
-}
+});
+
+//открытие попап редактирования карточек
 function openAddPopup() {
   openPopupWindow(popupAddCard);
   formAddCardElement.reset();
-  // resetErrorOpenForm(formAddCardElement);
-  toggleButton(inputListFormAddCardElement, buttonSubmitFormAddCardElement, validationConfig.disableButtonClass);
+  formAddCardValidator.resetErrorOpenForm()
 }
+
 //3 кнопки закрытия ппапов по Оверлей
 popupOpenEdit.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
 popupAddCard.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
@@ -152,7 +170,3 @@ buttonOpenAddCard.addEventListener('click', openAddPopup);
 popupOpenButtonProfile.addEventListener('click', openPopup);
 //Кнопка Сохранить редактирования профиля
 formInput.addEventListener('submit', handleFormSubmit)
-//Кнопка Добавить контент
-formAddPhoto.addEventListener('submit', handleAddCardFormSubmit)
-
-// enableValidation(validationConfig)

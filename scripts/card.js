@@ -1,9 +1,9 @@
 export default class Card {
-  constructor(data, selectorTemplate, openFigurePopup) {
+  constructor(data, selectorTemplate, openPopupWindow) {
     this._link = data.link;
     this._name = data.name;
     this._selectorTemplate = selectorTemplate;
-    this._openFigurePopup = openFigurePopup;
+    this.openPopupWindow = openPopupWindow;
   }
 
   _getTemplateClone() {
@@ -20,7 +20,7 @@ export default class Card {
   }
 
   _handleOpenImagePopupImage = () => {
-    this._openFigurePopup(this._name, this._link);
+    this.openPopupWindow(this._name, this._link);
   }
 
   _setEventListener() {
