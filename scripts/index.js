@@ -10,7 +10,8 @@ const profileName = document.querySelector('.profile__title');
 const profileProfession = document.querySelector('.profile__subtitle');
 //Карандаш - константа открытия редактирования профиля
 const popupOpenButtonProfile = document.querySelector('.profile__button-edit');
-const popupOpenEdit = document.querySelector('.popup_edit-profile');
+//форма профиля
+const profileForm = document.querySelector('.popup_edit-profile');
 const formAccioNameElement = document.forms.accioName
 //имя
 const formInputName = document.querySelector('.form__input_name');
@@ -41,42 +42,33 @@ const validationConfig = {
     textErrorClass: 'popup__error_type'
   };
 
-function handleFormSubmit(evt) {
+//отправка заполненной формы профиля
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = formInputName.value;
   profileProfession.textContent = formInputProfession.value;
-  closePopup(popupOpenEdit);
+  closePopup(profileForm);
 }
 
 //Открытие попап редактирование профиля
 function openPopup() {
-  openPopupWindow(popupOpenEdit);
-  const nameText = profileName.textContent;
+  openPopupWindow(profileForm);
   const professionText = profileProfession.textContent;
   formPersonalDataValidator.resetValidation()
   formInputName.value = profileName.textContent;
   formInputProfession.value = profileProfession.textContent;
 }
 
-//Универсальный обработчик крестиков закрытия
-const closeButtons = document.querySelectorAll('.popup__close');
-closeButtons.forEach((button) => {
-  const popup  =button.closest('.popup');
-  button.addEventListener('click', () => closePopup(popup));
-});
-
 //Функция открытия попап
 function openPopupWindow(popupElement) {
   popupElement.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEscape);
 }
-
 //Функция закрытия попап
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_opened')
   document.removeEventListener('keydown', closePopupByEscape);
 }
-
 //Закрытие попапа при нажатии на esc
 function closePopupByEscape(evt) {
   if (evt.key === 'Escape') {
@@ -105,13 +97,12 @@ function closePopupClickOverlay(evt) {
   }
 };
 //Добавим попап с полями название и ссылка
-const formPlaceName = document.querySelector('.form__input_place-name')
-const formPlaceLink = document.querySelector('.form__input_place-link')
+const formPlaceName = document.forms["place-name"];
+const formPlaceLink = document.forms["link"];
+const formAddPhoto = document.forms["addCard"];
 const popupAddCard = document.querySelector('.popup_add-card')
-const formAddPhoto = document.querySelector('.form_add-photo')
 //кнопка +
 const buttonOpenAddCard = document.querySelector('.profile__add-button')
-// const gridCards = document.querySelector('.element');
 //Лайк
 function toggleLike (object) {
   object.classList.toggle('element__like-button_active')
@@ -160,13 +151,22 @@ function openAddPopup() {
   formAddCardValidator.resetValidation()
 }
 
-//3 кнопки закрытия ппапов по Оверлей
-popupOpenEdit.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
-popupAddCard.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
-figurePopup.addEventListener('mousedown', (evt) => closePopupClickOverlay(evt))
+//универсальный обработчик оверлея и крестиков
+const popups = document.querySelectorAll('.popup')
+popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close')) {
+          closePopup(popup)
+        } 
+    })
+})
+
 //Клик открытия попап добавления контенкта
 buttonOpenAddCard.addEventListener('click', openAddPopup);
 //Клик открытия попап редактирования профиля
 popupOpenButtonProfile.addEventListener('click', openPopup);
 //Кнопка Сохранить редактирования профиля
-formInput.addEventListener('submit', handleFormSubmit)
+formInput.addEventListener('submit', handleProfileFormSubmit)
