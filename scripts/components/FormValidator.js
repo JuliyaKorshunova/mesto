@@ -8,6 +8,7 @@ export default class FormValidator {
     this._form = form;
     this._button = form.querySelector(this._submitButtonSelector);
     this._inputList = form.querySelectorAll(this._inputSelector)
+
   }
 _showInputError(errorTextElement, input) {
   input.classList.add(this._inputErrorClass);
@@ -51,7 +52,8 @@ resetValidation() {
   this._inputList.forEach(input => {
     const errorTextElement = this._form.querySelector(`${this._errorSelectorTemplate}${input.name}`);
     if(!input.validity.valid) {
-      this._hideInputError(errorTextElement, input);
+      this._hideInputError(
+        errorTextElement, input)
     }
   })
   this._disableButton()

@@ -10,7 +10,7 @@
   </head>
 
   <body class="page">
-sabmit
+
     <header class="header">
       <img class="header__logo" src="././images/header__logo.svg" alt="Места России">
     </header>
@@ -56,8 +56,8 @@ sabmit
         <form class="form" name="accioName" action="#" novalidate>
           <h2 class="popup__subtitle text">Редактировать профиль</h2>
           <div class="popup__text-container">
-            <input type="text" class="form__input form__input_name" name="name" id="name" value="name" required minlength="2" maxlength="40">
-            <span class="popup__error popup__error_type_name"></span>
+            <input type="text" class="form__input form__input_name" name="username" id="username" value="username" required minlength="2" maxlength="40">
+            <span class="popup__error popup__error_type_username"></span>
           </div>
           <div class="popup__text-container">
             <input type="text" class="form__input form__input_profession" name="profession" id="profession" value="profession" required minlength="2" maxlength="200">
@@ -74,8 +74,8 @@ sabmit
         <form class="form form_add-photo" name="addCard" action="#" novalidate>
           <h3 class="popup__subtitle text">Новое место</h3>
           <div class="popup__text-container">
-            <input type="text" class="form__input form__input_place-name" name="place-name" id="place-name" placeholder="Название" required minlength="2" maxlength="30">
-            <span class="popup__error popup__error_type_place-name"></span>
+            <input type="text" class="form__input form__input_place-name" name="place" id="place" placeholder="Название" required minlength="2" maxlength="30">
+            <span class="popup__error popup__error_type_place"></span>
           </div>
           <div class="popup__text-container">
             <input type="url" class="form__input form__input_place-link" name="link" id="link" placeholder="Ссылка на картинку" required>
@@ -94,9 +94,8 @@ sabmit
       </figure>
     </div>
 
-  <script type="module" src="./scripts/url-list.js"></script>
-  <script type="module" src="./scripts/Card.js"></script>
-  <script type="module" src="./scripts/index.js"></script>
+  
+  <script type="module" src="./index.js"></script>
 
 
   </body>

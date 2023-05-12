@@ -1,34 +1,29 @@
 export default class Card {
-  constructor(data, selectorTemplate, openPopupWindow) {
-    this._link = data.link;
-    this._name = data.name;
+  constructor(cardData, selectorTemplate, openPopupWindow) {
+    this._cardData = cardData;
+    this._link = cardData.link;
+    this._name = cardData.place;
     this._selectorTemplate = selectorTemplate;
-    this.openPopupWindow = openPopupWindow;
+    this._openPopupWindow = openPopupWindow;
   }
-
   _getTemplateClone() {
     return document.querySelector(this._selectorTemplate).content.querySelector('.element__item').cloneNode(true);
   }
-
   _handleLike = () => {
     this._likeElementButton.classList.toggle('element__like-button_active');
   }
-
   _handleDelete = () => {
     this._cloneElement.remove();
     this._cloneElement = null;
   }
-
   _handleOpenImagePopupImage = () => {
-    this.openPopupWindow(this._name, this._link);
+    this._openPopupWindow(this._cardData);
   }
-
   _setEventListener() {
     this._likeElementButton.addEventListener('click', this._handleLike);
     this._deleteCardButton.addEventListener('click', this._handleDelete);
     this._cardImage.addEventListener('click', this._handleOpenImagePopupImage);
   }
-
   createCard() {
     this._cloneElement = this._getTemplateClone();
     this._cardImage = this._cloneElement.querySelector('.element__grid-foto');
