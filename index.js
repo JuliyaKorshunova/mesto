@@ -55,9 +55,9 @@ Array.from(document.forms).forEach(item => {
 })
 //Открытие попап редактирование профиля
 popupOpenButtonProfile.addEventListener('click', () => {
-popupProfile.setInputValues(userInfo.getUserInfo())
 formsValidator.accioName.resetValidation();
-  popupProfile.open()
+popupProfile.setInputValues(userInfo.getUserInfo())
+popupProfile.open()
 })
 //открытие попап редактирования карточек
 function openAddPopup() {
