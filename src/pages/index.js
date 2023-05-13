@@ -1,9 +1,10 @@
-import Card from './scripts/components/Card.js';
-import FormValidator from './scripts/components/FormValidator.js';
-import PopupWithImage from "./scripts/components/PopupWithImage.js";
-import Section from "./scripts/components/Section.js";
-import UserInfo from "./scripts/components/UserInfo.js";
-import PopupWithForm from "./scripts/components/PopupWithForm.js";
+import '../pages/index.css';
+import Card from '../scripts/components/Card.js';
+import FormValidator from '../scripts/components/FormValidator.js';
+import PopupWithImage from "../scripts/components/PopupWithImage.js";
+import Section from "../scripts/components/Section.js";
+import UserInfo from "../scripts/components/UserInfo.js";
+import PopupWithForm from "../scripts/components/PopupWithForm.js";
 import {
   initialCards,
   popupOpenButtonProfile,
@@ -16,7 +17,7 @@ import {
   formsValidator,
   sabmitInfo,
   validationConfig
-} from "./scripts/utils/constants.js";
+} from "../scripts/utils/constants.js";
 
 const userInfo = new UserInfo(sabmitInfo);
 
