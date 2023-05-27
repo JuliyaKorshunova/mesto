@@ -27,7 +27,7 @@
   opacity: 0;
 }
 
-@media screen and (max-widch: 767px) {
+@media screen and (max-width: 760px) {
   .profile__avatar-overlay {
     width: calc(120px + (273 - 120)*((100vw - 320px)/(728 - 320)));
     height: calc(120px + (273 - 120)*((100vw - 320px)/(728 - 320)));
