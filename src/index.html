@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
   
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Юлия Коршунова">
+
+
     <!-- <link rel="stylesheet" href="./pages/index.css"> -->
+
     <title>Место</title>
   </head>
 
@@ -13,17 +16,21 @@
 
     <header class="header">
       <img class="header__logo" src="<%=require('././images/header__logo.svg')%>" alt="Места России">
+      <!-- <img class="header__logo" src="././images/header__logo.svg" alt="Места России"> -->
     </header>
 
     <main class="main">
 
       <section class="profile">
         <div class="profile__info">
-          <img class="profile__avatar" src="<%=require('././images/kusto.jpg')%>" alt="Жак-Ив Кусто">
+          <button type="button" class="profile__button-avatar profile__avatar-overlay">
+            <img class="profile__avatar" src="<%=require('././images/kusto.jpg')%>" alt="Жак-Ив Кусто">
+            <!-- <img class="profile__avatar" src="#" alt="Жак-Ив Кусто"> -->
+          </button>
           <div class="profile__container">
-              <h1 class="text profile__title">Жак-Ив Кусто</h1>
+              <h1 class="text profile__title"></h1>
               <button class="button profile__button-edit" type="button"></button>
-              <p class="text profile__subtitle">Исследователь океана</p>
+              <p class="text profile__subtitle"></p>
           </div>
         </div>
         <button class="button profile__add-button" type="button"></button>
@@ -35,7 +42,10 @@
           <img class="element__grid-foto" src="#" alt="#">
           <div class="element__container">
             <h2 class="text element__subtitle"></h2>
-            <button class="button element__like-button" type="button"></button>          
+            <div class="element__like-container">
+              <button class="button element__like-button" type="button"></button>
+              <span class="element__counter"></span>
+            </div>
           </div>
         </div>
       </template>
@@ -72,7 +82,7 @@
       <div class="popup__container">
         <button class="button popup__close" type="button"></button>
         <form class="form form_add-photo" name="addCard" action="#" novalidate>
-          <h3 class="popup__subtitle text">Новое место</h3>
+          <h2 class="popup__subtitle text">Новое место</h2>
           <div class="popup__text-container">
             <input type="text" class="form__input form__input_place-name" name="place" id="place" placeholder="Название" required minlength="2" maxlength="30">
             <span class="popup__error popup__error_type_place"></span>
@@ -94,8 +104,32 @@
       </figure>
     </div>
 
-  
-  <!-- <script type="module" src="./index.js"></script> -->
+    <div class="popup popup-avatar-edit">
+      <div class="popup__container">
+        <button class="button popup__close" type="button"></button>
+        <form class="form form_add-photo" name="editAvatar" action="#" novalidate>
+          <h2 class="popup__subtitle text">Обновить аватар</h2>
+          <div class="popup__text-container">
+            <input type="url" class="form__input form__input_place-link" name="avatar" id="avatar" placeholder="Ссылка на картинку" required>
+            <span class="popup__error popup__error_type_avatar"></span>
+          </div>
+          <button type="submit" class="popup__submit popup__submit_disable" name="button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-delete">
+      <div class="popup__container">
+        <button class="button popup__close" type="button"></button>
+        <form class="form form_add-photo" name="deleteCard" action="#" novalidate>
+          <h3 class="popup__subtitle text popup__subtitle_delete">Вы уверены?</h3>
+          <button type="submit" class="popup__submit" name="button">Да</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- <script type="module" src="./pages/index.js"></script> -->
 
 
   </body>

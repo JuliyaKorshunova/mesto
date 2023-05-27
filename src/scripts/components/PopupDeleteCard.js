@@ -1,27 +1,12 @@
 import Popup from "./Popup.js";
 
-export default class PopupWithForm extends Popup {
+export default class PopupDeleteCard extends Popup {
   constructor(popupSelector, submitFunction) {
     super(popupSelector);
     this._submitFunction = submitFunction;
-    this._form = this._popup.querySelector('.form');
-    this._inputList = this._form.querySelectorAll('.form__input');
+    this._form = this._popup.querySelector('.form_add-photo');
     this._submitButton = this._form.querySelector('.popup__submit');
     this._defaultButtonText = this._submitButton.textContent;
-  }
-
-  _getInputValues() {
-    this._values = {};
-    this._inputList.forEach(input => {
-      this._values[input.name] = input.value
-    })
-    return this._values
-  }
-
-  setInputValues(dataName) {
-    this._inputList.forEach(input => {
-      input.value = dataName[input.name];
-    })
   }
 
   setEventListeners() {
@@ -29,7 +14,7 @@ export default class PopupWithForm extends Popup {
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._submitButton.textContent = `${this._submitButton.textContent}...`
-      this._submitFunction(this._getInputValues());
+      this._submitFunction({ card: this._element, cardId: this._cardId });
     })
   }
 
@@ -37,8 +22,9 @@ export default class PopupWithForm extends Popup {
     this._submitButton.textContent = this._defaultButtonText
   }
 
-  close() {
-    super.close();
-    this._form.reset();
+  open = ({ card, cardId }) => {
+    super.open();
+    this._element = card;
+    this._cardId = cardId;
   }
 }

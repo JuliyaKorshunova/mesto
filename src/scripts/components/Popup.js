@@ -1,7 +1,8 @@
 export default class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
-    this._closePopup = this._popup.querySelector('.popup__close')
+    this._closePopup = this._popup.querySelector('.popup__close');
+    this._form = this._popup.querySelector('.form');
   }
 //Закрытие по крестику
   _handleButtonClose = () => {
