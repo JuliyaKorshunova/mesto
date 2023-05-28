@@ -14,4 +14,12 @@ export default class UserInfo {
     this._profileName.textContent = username;
     this._profileProfession.textContent = profession;
   }
+
+  setid (id) {
+    this._id = id;
+  }
+
+  getid () {
+    return this._id;
+  }
 }

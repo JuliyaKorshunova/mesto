@@ -85,9 +85,9 @@ popupProfile.setEventListeners();
 
 //Сабмит Экземпляр класса PopupWithForm для добавления карточек
 const popupAddCardInfo = new PopupWithForm(popupAddCardSelector, (data) => {
-  Promise.all([api.getInfo(), api.addCard(data)])
-    .then(([dataUser, dataCard]) => {
-      dataCard.myid = dataUser._id;
+  api.addCard(data)
+    .then(dataCard => {
+      dataCard.myid = userInfo.getid()
       section.addItemPrepend(createNewCard(dataCard))
       popupAddCardInfo.close();
     })
@@ -121,11 +121,13 @@ formsValidator.accioName.resetValidation();
 popupProfile.setInputValues(userInfo.getUserInfo())
 popupProfile.open()
 })
+
 //открытие попап редактирования карточек
 function openAddPopup() {
   formsValidator.addCard.resetValidation();
   popupAddCardInfo.open()
 }
+
 //Клик открытия попап добавления контенкта
 buttonOpenAddCard.addEventListener('click', openAddPopup);
 
@@ -139,6 +141,7 @@ Promise.all([api.getInfo(), api.getCards()])
   .then(([dataUser, dataCard]) => {
     dataCard.forEach(element => element.myid = dataUser._id)
     userInfo.setUserInfo({ username: dataUser.name, profession: dataUser.about, avatar: dataUser.avatar })
+    userInfo.setid(dataUser._id)
     section.addCardArray(dataCard);
   })
   .catch((error) => console.error(`Ошибка при создании начальных данных страницы ${error}`))
